@@ -67,9 +67,7 @@ export default {
   methods: {
     login() {
       this.$store.dispatch("auth/login", this.$data).then(() => {
-        this.$store.dispatch("auth/authUser").then(() => {
-          this.$router.push(this.$route.query.redirect || "/");
-        });
+        this.$router.push(this.$route.query.redirect || "/");
       });
     }
   },
