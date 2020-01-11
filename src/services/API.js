@@ -51,7 +51,6 @@ apiClient.interceptors.response.use(
       // eslint-disable-next-line no-console
       console.log("503 error status");
     }
-    // TODO Remove for go live
     // eslint-disable-next-line no-console
     console.log(error);
     return Promise.reject(error.response);
