@@ -43,16 +43,6 @@ apiClient.interceptors.response.use(
     if (error.response.status === 401) {
       store.dispatch("auth/logout");
     }
-    if (error.response.status === 403) {
-      // eslint-disable-next-line no-console
-      console.log("403 error status");
-    }
-    if (error.response.status === 503) {
-      // eslint-disable-next-line no-console
-      console.log("503 error status");
-    }
-    // eslint-disable-next-line no-console
-    console.log(error);
     return Promise.reject(error.response);
   }
 );
