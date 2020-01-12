@@ -8,10 +8,10 @@
             <div class="mb-4">
               <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                v-model="username"
+                v-model="email"
                 required
                 autofocus
               />
@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
       device_name: "app"
     };
@@ -72,7 +72,7 @@ export default {
     }
   },
   mounted() {
-    axios.get("http://airlock-example.test/airlock/csrf-cookie");
+    axios.get("http://localhost:8080/airlock/csrf-cookie");
   }
 };
 </script>

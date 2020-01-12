@@ -11,7 +11,7 @@ import axios from "axios";
 import store from "../store/store";
 
 export const apiClient = axios.create({
-  baseURL: "http://airlock-example.test/api",
+  baseURL: "http://localhost:8080/api",
   withCredentials: true
 });
 
