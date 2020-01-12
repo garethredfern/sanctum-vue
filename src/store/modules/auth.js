@@ -42,7 +42,7 @@ export const actions = {
       })
       .catch(error => {
         commit("SET_LOADING", false);
-        commit("SET_ERROR", error.data.message);
+        commit("SET_ERROR", error.data ? error.data.message : error);
       });
   },
   logout({ commit }) {
