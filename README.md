@@ -1,4 +1,4 @@
-# airlock-vue
+# sanctum-vue
 
 ## Project setup
 ```
