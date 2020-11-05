@@ -72,7 +72,7 @@ export default {
     }
   },
   mounted() {
-    axios.get("http://localhost:8080/airlock/csrf-cookie");
+    axios.get("http://localhost:8080/sanctum/csrf-cookie");
   }
 };
 </script>
