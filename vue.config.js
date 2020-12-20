@@ -5,6 +5,6 @@ module.exports = {
   devServer: {
     // proxy to use http://localhost:8080
     // this gets round CORS issues.
-    proxy: "http://airlock-example.test"
+    proxy: "http://sanctum-api.test"
   }
 };
