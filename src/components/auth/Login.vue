@@ -6,7 +6,11 @@
           <h1 class="text-center mb-2 text-lg">Login</h1>
           <form @submit.prevent="login">
             <div class="mb-4">
-              <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+              <label
+                for="email"
+                class="block text-gray-700 text-sm font-bold mb-2"
+                >Email</label
+              >
               <input
                 type="email"
                 id="email"
@@ -18,7 +22,11 @@
             </div>
 
             <div class="mb-4">
-              <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+              <label
+                for="password"
+                class="block text-gray-700 text-sm font-bold mb-2"
+                >Password</label
+              >
               <input
                 type="password"
                 id="password"
@@ -32,13 +40,23 @@
             <button
               type="submit"
               class="bg-green-400 hover:bg-green-500 trans text-white rounded px-4 py-1 text-sm focus:outline-none focus:shadow-outline"
-            >Login</button>
-            <p class="text-red-500 text-xs italic mt-6" role="alert" v-if="error">{{ error }}</p>
+            >
+              Login
+            </button>
+            <p
+              class="text-red-500 text-xs italic mt-6"
+              role="alert"
+              v-if="error"
+            >
+              {{ error }}
+            </p>
             <p
               class="text-blue-500 text-xs italic mt-6"
               role="alert"
               v-if="loading && !error"
-            >Loading...</p>
+            >
+              Loading...
+            </p>
           </form>
         </div>
       </div>
@@ -52,27 +70,27 @@ import { mapGetters } from "vuex";
 
 export default {
   metaInfo: {
-    title: "Login"
+    title: "Login",
   },
   data() {
     return {
       email: "",
       password: "",
-      device_name: "app"
+      device_name: "app",
     };
   },
   computed: {
-    ...mapGetters("auth", ["authUser", "error", "loading"])
+    ...mapGetters("auth", ["authUser", "error", "loading"]),
   },
   methods: {
     login() {
       this.$store.dispatch("auth/login", this.$data).then(() => {
         this.$router.push(this.$route.query.redirect || "/");
       });
-    }
+    },
   },
   mounted() {
     axios.get("http://localhost:8080/airlock/csrf-cookie");
-  }
+  },
 };
 </script>
