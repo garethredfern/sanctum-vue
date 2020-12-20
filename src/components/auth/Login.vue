@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import { mapGetters } from "vuex";
 
 export default {
@@ -89,8 +88,5 @@ export default {
       });
     },
   },
-  mounted() {
-    axios.get("http://localhost:8080/sanctum/csrf-cookie");
-  }
 };
 </script>

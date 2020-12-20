@@ -11,8 +11,7 @@ import axios from "axios";
 import store from "../store/store";
 
 export const apiClient = axios.create({
-  baseURL: "http://localhost:8080/api",
-  withCredentials: true // required to handle the CSRF token
+  baseURL: "http://localhost:8080/api"
 });
 
 /*

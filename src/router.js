@@ -27,6 +27,13 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "dashboard" */ "./components/Dashboard")
+  },
+  {
+    path: "/protected",
+    name: "protected",
+    meta: { requiresAuth: true },
+    component: () =>
+      import(/* webpackChunkName: "dashboard" */ "./components/Protected")
   }
 ];
 
